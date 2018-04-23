@@ -25,16 +25,17 @@ describe('linked-list.js', () => {
     expect(testList.head.next.value).toEqual(10);
     expect(testList._length).toEqual(2);
   });
-//   test('#remove from list', () => {
-//     const testList = new LinkedList();
-//     testList.insertAtEnd(9);
-//     testList.insertAtEnd(10);
-//     testList.insertAtEnd(9);
-//     testList.insertAtEnd(9);
-//     testList.remove(10);
-//     expect(testList.head.next.value).toEqual(9);
-//     expect(testList._length).toEqual(3);
-//   });
+  
+  test('#remove from list', () => {
+    const testList = new LinkedList();
+    testList.insertAtEnd(9);
+    testList.insertAtEnd(10);
+    testList.insertAtEnd(9);
+    testList.insertAtEnd(9);
+    testList.remove(10);
+    expect(testList.head.next.value).toEqual(9);
+    expect(testList._length).toEqual(3);
+  });
 
 
 //   test('#map over list', () => {
