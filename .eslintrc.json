@@ -11,6 +11,8 @@
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-trailing-spaces":"off",
     "linebreak-style": "off",
-    "strict": "off"
+    "strict": "off",
+    "no-underscore-dangle": "off"
+
   }
 }

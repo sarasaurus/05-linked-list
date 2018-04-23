@@ -53,24 +53,44 @@ module.exports = class LinkedList {
     }
   }
     
-  // map(callback) {
+  map(callback) {
+    if (this.head === null) return;
+    let result = [];
+    let currentNode = this.head;
+   
+    // console.log('we are before callback in', currentNode.value);
+    // callback(currentValue);
+    // console.log ('we are after the callback in ', currentNode.value);
+    // return this;
+    
+    while (currentNode) {
+      result.push(callback(currentNode.value));
+      currentNode = currentNode.next;
+    }
+    return result;
+  }
+  mutate(callback) {
+    if (this.head === null) return;
+    let currentNode = this.head;
+   
+    // console.log('we are before callback in', currentNode.value);
+    // callback(currentValue);
+    // console.log ('we are after the callback in ', currentNode.value);
+    // return this;
+    
+    while (currentNode) {
+      callback(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    return this;
+  }
 
-  //   const currentNode = this.head;    
+  // reduce(callback) {
+  //   if (this.head === null) return;
+
+  //   const currentNode = this.head;
   //   while (currentNode.next) {
-  //     const node = new Node(value);
-  //     if (!this.head) {
-  //       this.head = node;
-  //       this._length++;
-  //       return this;
-  //     }
-  //     let currentNode = this.head;
-  //     while (currentNode.next) {
-  //       currentNode = currentNode.next;
-  //     }
-  //     currentNode.next = node;
-  //     this._length++;
-  //     return this;
+  //     callback(currentNode.next.value);
   //   }
-  //   return this;
   // }
 };
