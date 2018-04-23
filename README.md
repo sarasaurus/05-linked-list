@@ -1,15 +1,30 @@
-# Project Name
-**Author**: Your Name Goes Here
-**Version**: 1.0.0 (increment the patch/fix version number up if you make more commits past your first submission)
+# Linked List and methods
+**Author**: Sarah B
+**Version**: 1.0.0 
+
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code Fellows 301 class. (i.e. What's your problem domain?) -->
+This module creates a linked list and provides 4 methods to work with the list
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+clone this repo
+install node and dependencies
+cd into the src folder
+run node 
+require in the linked-list module (let list = require (./linked-list))
+in the CLI--
+let newlist = new LinkedList();
+newList.insertAtHead(value); -- to insert a value at the head of the list
+newList.insertAtEnd(value); -- to insert a value at the end of the list
+newList.remove(value); -- to remove the value in the list (it will remove all matching values)
+newList.map(function); -- runs a function over each value in the linked list and returns an array of the changed values
+(for example if newList.head.value === 1 and newList.head.next.value === 2, then you ran newList.map(value=>value+1); the funtion would return [2, 3] )
+the linked list can be navigated using dot notation
+newList.head.value-- returns the value at the head(start) of the list
+newList.head.next.value--returns the value of the next node in the list, etc.
+
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+This application uses the node runtime environment and node package manager. It was tested using jest.
+
 ## Change Log
-<!-- Use this are to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
-01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource.
-## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+4-22-2018 -- the Linked List module passes all tests and has an insertAtHead, insertAtEnd, remove and map methods.
+
 -->
