@@ -57,40 +57,10 @@ module.exports = class LinkedList {
     if (this.head === null) return;
     let result = [];
     let currentNode = this.head;
-   
-    // console.log('we are before callback in', currentNode.value);
-    // callback(currentValue);
-    // console.log ('we are after the callback in ', currentNode.value);
-    // return this;
-    
     while (currentNode) {
       result.push(callback(currentNode.value));
       currentNode = currentNode.next;
     }
     return result;
   }
-  mutate(callback) {
-    if (this.head === null) return;
-    let currentNode = this.head;
-   
-    // console.log('we are before callback in', currentNode.value);
-    // callback(currentValue);
-    // console.log ('we are after the callback in ', currentNode.value);
-    // return this;
-    
-    while (currentNode) {
-      callback(currentNode.value);
-      currentNode = currentNode.next;
-    }
-    return this;
-  }
-
-  // reduce(callback) {
-  //   if (this.head === null) return;
-
-  //   const currentNode = this.head;
-  //   while (currentNode.next) {
-  //     callback(currentNode.next.value);
-  //   }
-  // }
 };
