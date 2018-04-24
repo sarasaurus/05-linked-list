@@ -36,15 +36,19 @@ describe('linked-list.js', () => {
     expect(testList.head.next.value).toEqual(9);
     expect(testList._length).toEqual(3);
   });
-
-
-  test('#map over list', () => {
+  
+  /*eslint-disable*/
+  
+  test.only('#map over list', () => {
     const testList = new LinkedList();
     testList.insertAtEnd(1);
     testList.insertAtEnd(2);
     testList.insertAtEnd(3);
     testList.insertAtEnd(4);
-    const result = testList.map(ele => ele + 1); 
-    expect(result).toEqual([2, 3, 4, 5]);
+    const result = testList.map(ele => ele.value += 1); 
+    console.log('map head val', result.head.value);
+    console.log('map head.next val', result.head.next.value);
+    expect(result.head.value).toEqual(2);
+   
   }); 
 });

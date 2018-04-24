@@ -6,9 +6,8 @@ module.exports = class LinkedList {
   constructor() {
     this._length = 0;
     this.head = null;
-  
   }
-// Big O(1)-- only one thing being inserted, length of the object doesnot affect
+  // Big O(1)-- only one thing being inserted, length of the object doesnot affect
   insertAtHead(value) {
     const newHead = new Node(value);
     if (!this.head) {
@@ -21,7 +20,7 @@ module.exports = class LinkedList {
     this._length++;
     return this;
   }
-// Big O(N)-- where N = length of the linked list 
+  // Big O(N)-- where N = length of the linked list 
   insertAtEnd(value) {
     const node = new Node(value);
     if (!this.head) {
@@ -37,7 +36,7 @@ module.exports = class LinkedList {
     this._length++;
     return this;
   }
-// Big O(N)-- where N = length of the linked list 
+  // Big O(N)-- where N = length of the linked list 
   remove(searchValue) {
     if (this.head === null) return;
     if (this.head.value === searchValue) {
@@ -54,15 +53,21 @@ module.exports = class LinkedList {
       }
     }
   }
-  //Big O(N) where N = length of the linked list
+  // Big O(N) where N = length of the linked list
   map(callback) {
+    const newList = new LinkedList();
     if (this.head === null) return;
-    let result = [];
     let currentNode = this.head;
     while (currentNode) {
-      result.push(callback(currentNode.value));
+      newList.insertAtEnd(currentNode.value);
       currentNode = currentNode.next;
     }
-    return result;
+    
+    let newCurrentNode = newList.head;
+    while (newCurrentNode.next) {
+      newCurrentNode = newCurrentNode.next;
+      callback(newCurrentNode);
+    }
+    return newList;
   }
 };
